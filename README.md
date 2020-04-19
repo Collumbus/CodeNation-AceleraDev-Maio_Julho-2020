@@ -14,14 +14,17 @@ Segundo o Wikipedia, criptografia ou criptologia (em grego: kryptós, “escondi
 
 Escrever programa, em qualquer linguagem de programação, que faça uma requisição HTTP para a url abaixo:
 
+```
 https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=SEU_TOKEN
+```
+
 Para encontrar o seu token , acesse a plataforma Codenation, faça o login e a informação estará na tela, conforme no exemplo abaixo:
 
 ![Question 1 screenshot](/img/img1.png)
 
 O resultado da requisição vai ser um JSON conforme o exemplo:
 
-```
+```JSON
 {
     "numero_casas": 10,
     "token":"token_do_usuario",
