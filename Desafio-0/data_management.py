@@ -2,7 +2,8 @@ import json
 import requests
 
 token = ''
-params = {'token' : token}
+params = {'token': token}
+
 
 def get_data():
     url = 'https://api.codenation.dev/v1/challenge/dev-ps/generate-data'
@@ -10,9 +11,11 @@ def get_data():
     data = json.loads(re.content)
     return data
 
+
 def save_data(data):
-    with open('answer.json', 'w', encoding='utf-8') as f:
+    with open('Desafio-0/answer.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+
 
 def post_file():
     url = 'https://api.codenation.dev/v1/challenge/dev-ps/submit-solution'

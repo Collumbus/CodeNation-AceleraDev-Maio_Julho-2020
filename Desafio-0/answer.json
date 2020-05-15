@@ -1,0 +1,6 @@
+{
+    "code": "not_found",
+    "error": "user.Service.FindByChallengeSubmissionHash: user.MongoRepository.FindByChallengeSubmissionHash: not found",
+    "message": "Erro gerando dados para desafio",
+    "detail": null
+}

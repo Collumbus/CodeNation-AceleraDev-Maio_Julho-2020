@@ -6,6 +6,9 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
 
+# CodeNation
+codenation.exe
+
 # IPython
 profile_default/
 ipython_config.py
