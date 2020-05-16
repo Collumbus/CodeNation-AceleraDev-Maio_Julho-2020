@@ -19,26 +19,29 @@ records = [
 def classify_by_phone_number(records):
     CONNECTION_TAX = 0.36
     MINUTE_TAX = 0.09
-    XXIIH = 1320                                                                    # 22 hours in minutes
-    VIH = 360                                                                       # 6 hours in minutes
-    billed_sources = {}                                                             # dic. to store calculated bills
+    billed_sources = {}
 
     for record in records:
-        start = datetime.fromtimestamp(record['start'])                             # call start
-        s_min = ((start.hour * 60 + start.minute) * 60 + start.second) // 60        # call start in minutes
-        end = datetime.fromtimestamp(record['end'])                                 # call end
-        minutes = (end - start).seconds // 60                                       # call duration in minutes
-        tax = 0.0                                                                   # cost calculator var
+        start = datetime.fromtimestamp(record['start'])
+        end = datetime.fromtimestamp(record['end'])
 
-        for minute in range(minutes):                                               # check what tax the minute fits
+        # day charge rate
+        if (start.hour >= 6 and end.hour < 22):
+            tax = CONNECTION_TAX + (((end - start).seconds // 60) * MINUTE_TAX)
 
-            if (minute + s_min) < XXIIH and (minute + s_min) >= VIH:                # day tax
-                tax += 1 * MINUTE_TAX
+        # night charge rate
+        elif (start.hour >= 22 and end.hour >= 6) or (start.hour < 6 and end.hour < 6):
+            tax = CONNECTION_TAX
 
-            else:                                                                   # night tax
-                pass
+        # mix charge rate
+        elif (start.hour >= 6 and start.hour < 22) and (end.hour >= 22 and end.hour < 6):
+            limit_s = datetime.fromisoformat(datetime.strftime(start.date(), "%Y-%m-%d") + "T22:00:00")
+            tax = CONNECTION_TAX + (((limit_s - start.hour).seconds // 60) * MINUTE_TAX)
 
-        tax += CONNECTION_TAX                                                       # adds the connection tax
+        elif (start.hour >= 22 and start.hour < 6) and (end.hour >= 6 and end.hour < 22):
+            limit_i = datetime.fromisoformat(datetime.strftime(start.date(), "%Y-%m-%d") + "T06:00:00")
+            tax = CONNECTION_TAX + (((limit_i - end.hour).seconds // 60) * MINUTE_TAX)
+
         billed_sources[record['source']] = round(billed_sources.setdefault(record['source'], 0) + tax, 2)
 
     report = [{'source': record, 'total': billed_sources[record]} for record in billed_sources]
