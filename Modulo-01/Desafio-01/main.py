@@ -32,11 +32,8 @@ def classify_by_phone_number(records):
 
         for minute in range(minutes):                                               # check what tax the minute fits
 
-            if (minute + s_min) < XXIIH and (minute + s_min) >= VIH:                # day tax
-                tax += 1 * MINUTE_TAX
-
-            else:                                                                   # night tax
-                pass
+            if VIH < (minute + s_min) < XXIIH:                                      # day tax
+                tax += MINUTE_TAX
 
         tax += CONNECTION_TAX                                                       # adds the connection tax
         billed_sources[record['source']] = round(billed_sources.setdefault(record['source'], 0) + tax, 2)
