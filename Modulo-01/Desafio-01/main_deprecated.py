@@ -30,17 +30,17 @@ def classify_by_phone_number(records):
             tax = CONNECTION_TAX + (((end - start).seconds // 60) * MINUTE_TAX)
 
         # night charge rate
-        elif (start.hour >= 22 and end.hour >= 6) or (start.hour < 6 and end.hour < 6):
+        elif (start.hour >= 22 and end.hour >= 22) or (start.hour < 6 and end.hour < 6):
             tax = CONNECTION_TAX
 
         # mix charge rate
         elif (start.hour >= 6 and start.hour < 22) and (end.hour >= 22 and end.hour < 6):
             limit_s = datetime.fromisoformat(datetime.strftime(start.date(), "%Y-%m-%d") + "T22:00:00")
-            tax = CONNECTION_TAX + (((limit_s - start.hour).seconds // 60) * MINUTE_TAX)
+            tax = CONNECTION_TAX + (((limit_s - start).seconds // 60) * MINUTE_TAX)
 
         elif (start.hour >= 22 and start.hour < 6) and (end.hour >= 6 and end.hour < 22):
             limit_i = datetime.fromisoformat(datetime.strftime(start.date(), "%Y-%m-%d") + "T06:00:00")
-            tax = CONNECTION_TAX + (((limit_i - end.hour).seconds // 60) * MINUTE_TAX)
+            tax = CONNECTION_TAX + (((limit_i - end).seconds // 60) * MINUTE_TAX)
 
         billed_sources[record['source']] = round(billed_sources.setdefault(record['source'], 0) + tax, 2)
 
