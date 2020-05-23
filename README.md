@@ -2,7 +2,7 @@
 Este repositório reune as atividades realizadas durante o programa de aceleração de desenvolvedores Python ofericido pela CodeNation.
 * [Desafio-0](https://www.codenation.dev/code-review/#/python-5/B3cSbcRGg) (desafio de seleção para participar do programa)
 * [Modulo-01](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-01)
-* [Modulo-02]() (em andamento)
+* [Modulo-02](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-02)
 * [Modulo-02]() (em andamento)
 * [Modulo-03]() (em andamento)
 * [Modulo-04]() (em andamento)
