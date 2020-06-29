@@ -1,6 +1,28 @@
 from django.db import models
+from django.db.models import Q
 
 # Create your models here.
+
+class ProductManager(models.Manager):
+    def with_text(self, text):
+        queryset = self.get_queryset().filter(name__contains=text)
+        return queryset
+
+    def expensive_products(self):
+        return self.get_queryset().filter(price__gte=500)
+
+    def cheap_toys(self):
+        return self.get_queryset().filter(
+            category__name='Brinquedos',
+            price__lte=100
+        )
+
+    def toys_or_expensive_items(self):
+        query_filter = Q(category__name='Brinquedos') | Q(price__gte=500)
+        queryset = self.get_queryset().filter(query_filter)
+        print(queryset.query)
+        return queryset
+
 
 class Category(models.Model):
     name = models.CharField('Nome', max_length=50)
@@ -14,6 +36,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    objects = ProductManager()
     name = models.CharField('Nome', max_length=100)
     description = models.TextField('Descrição')
     price = models.DecimalField('Preço', max_digits=8, decimal_places=2)

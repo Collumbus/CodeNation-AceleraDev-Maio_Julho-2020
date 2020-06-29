@@ -51,8 +51,8 @@ Sugestão: Crie um projeto base com Django para testar as validações e o funci
 	django-admin startproject restapi
 	cd restapi
 	django-admin startapp api
-	django-admin createsuperuser
 	python manage.py migrate
+    python manage.py createsuperuser
 	python manage.py runserver
     
 Para testar a aplicação

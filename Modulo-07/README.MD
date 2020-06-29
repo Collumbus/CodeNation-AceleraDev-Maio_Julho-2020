@@ -1,8 +1,9 @@
 ## Links úteis
 
-* [How to write an API in 3 lines of code with Django REST framework](https://medium.com/crowdbotics/how-to-write-an-api-in-3-lines-of-code-with-django-rest-framework-59b0971edfa4)
-* [Let's build an API with Django REST Framework](https://medium.com/backticks-tildes/lets-build-an-api-with-django-rest-framework-32fcf40231e5)
-* [Learn REST: A RESTful Tutorial ](https://www.restapitutorial.com/)
-* [O que é API? REST e RESTful? Conheça as definições e diferenças!](https://becode.com.br/o-que-e-api-rest-e-restful/)
-* [Quickstart](https://www.django-rest-framework.org/tutorial/quickstart/)
-* [Django Rest Framework](https://realpython.com/django-rest-framework-quick-start/)
+* [Como funciona o ORM do Django](https://www.gilenofilho.com.br/como-funciona-o-orm-do-django/)
+* [Django ORM Cookbook Documentation](https://buildmedia.readthedocs.org/media/pdf/django-orm-cookbook/latest/django-orm-cookbook.pdf)
+* [Django ORM Relationships Cheat Sheet](https://hackernoon.com/django-orm-relationships-cheat-sheet-14433d6cf68c)
+* [Django ORM Optimization Tips](https://concisecoder.io/2018/11/04/django-orm-optimization-tips/)
+* [Caching in Django With Redis](https://realpython.com/caching-in-django-with-redis/)
+* [Visualizando query SQL a partir do ORM Django](https://medium.com/@beatrizuezu/visualizando-query-sql-a-partir-do-orm-django-5771370a9c55)
+* [Django Models: O Guia “Definitivo” das Boas Práticas](https://moacirmoda.com/django-models-o-guia-definitivo-das-boas-praticas/)
