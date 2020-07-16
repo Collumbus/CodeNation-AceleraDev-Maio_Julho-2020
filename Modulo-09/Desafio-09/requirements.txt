@@ -1,0 +1,9 @@
+atomicwrites
+attrs
+certifi
+more-itertools
+pluggy
+py
+pytest
+six
+PyYAML
