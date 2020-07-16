@@ -8,9 +8,8 @@ Este repositório reune as atividades realizadas durante o programa de aceleraç
 * [Modulo-05](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-05)
 * [Modulo-06](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-06) 
 * [Modulo-07](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-07) 
-* [Modulo-08]() (em andamento)
-* [Modulo-09]() (em andamento)
-* [Modulo-10]() (em andamento)
+* [Modulo-08](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-08) 
+* [Modulo-09](https://github.com/Collumbus/CodeNation-AceleraDev-Maio_Julho-2020/tree/master/Modulo-09) 
 * [Desafio-final]() (em andamento)
 
 # Criptografia de Júlio César
